@@ -1,0 +1,17 @@
+Header always unset X-Frame-Options
+Header set X-Frame-Options "Deny"
+
+Options -MultiViews
+    RewriteEngine On
+	<FilesMatch "\.(html|htm|js|css)$">
+	  FileETag None
+	  <IfModule mod_headers.c>778
+		Header unset ETag
+		Header always edit Set-Cookie ^(.*)$ $1;HttpOnly;Secure
+		Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+		Header set Pragma "no-cache"
+	  </IfModule>
+	</FilesMatch>
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.html [QSA,L]
+	

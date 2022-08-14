@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <script src="%PUBLIC_URL%/config.js"></script>
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Digital Banking System- Commlink Info Tech Ltd.</title>
+    <!-- <script
+      src="tinymce.min.js"
+      integrity="sha256-DwA/5XvQk7JerRG73GsRcEUM+ESubaliT2xRpDtIKNA="
+      crossorigin="anonymous"
+    ></script> -->
+  </head>
+  <body onload="bodyOnLoad()">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script src="wgssSigCaptX.js"></script>
+    <script src="base64.js"></script>
+    <script src="SigCaptX-Utils.js"></script>
+    <script src="SigCaptX-SessionControl.js"></script>
+    <script src="SigCaptX-Globals.js"></script>
+    <script src="SigCaptX-Functions.js"></script>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <script src="jquery.js" type="text/javascript"></script>
+    <script src="jquery.easyModal.js" type="text/javascript"></script>
+    <script src="fpCapturer.js"></script>
+    <script type="text/javascript">
+      function captureFinger(sender, dataHolder, extraData) {
+        console.log("extra data", extraData);
+        var fpGrabber = new FingerCapturer(12002, "Verify Finger");
+        fpGrabber.captureFinger(function (captureResponse) {
+          if (!captureResponse.isError) {
+            $(`#${dataHolder}`).val(captureResponse.data);
+            $("#divMsg")
+              .removeClass("error")
+              .addClass("success")
+              .html("Finger Captured")
+              .show();
+
+            console.log(captureResponse.data);
+            extraData["colorButton"] = "green";
+            let data = {
+              listoffingers: captureResponse.data,
+              extraData,
+            };
+
+            console.log("data", data);
+            window.fingerComponent.receiveFingerData(data);
+
+            //data.append('listoffingers', JSON.stringify(captureResponse.data));
+            // var urlToSend = "http://localhost:8080/dataFromTcap";
+
+            // var xhr = new XMLHttpRequest();
+            // xhr.open("POST", urlToSend, true);
+            // xhr.setRequestHeader("Content-Type", "application/json");
+            // xhr.onload = function () {
+            //   // do something to response
+            //   console.log(this.responseText);
+            // };
+            // xhr.send(JSON.stringify(data));
+          } else {
+            $(`#${dataHolder}`).val("");
+            $("#divMsg")
+              .removeClass("success")
+              .addClass("error")
+              .html(
+                "Error occurred while capturing finger : " +
+                  captureResponse.message
+              )
+              .show();
+          }
+        });
+
+        return false;
+      }
+    </script>
+    <!-- Signature pad scripts  -->
+  </body>
+</html>
