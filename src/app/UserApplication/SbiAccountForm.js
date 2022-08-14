@@ -37,7 +37,7 @@ class SbiAccountForm extends Component {
     let str = this.state?.tp?.profession;
 
     let serviceName = str?.substring(str.indexOf(":") + 1);
-    let serviceType = str.substring(0, str.indexOf(":") - 1);
+    let serviceType = str?.substring(0, str.indexOf(":") - 1);
     console.log("type", serviceType);
     if (serviceType == "Service") {
       let s3;
