@@ -1510,6 +1510,7 @@ export class PersonalInformation extends Component {
                           <CustomDropDownBox
                             dim={v.dim}
                             id={v.id}
+                            key={k}
                             title={v.title}
                             isMandatory={v.isMandatory}
                             placeholder={v.placeholder}

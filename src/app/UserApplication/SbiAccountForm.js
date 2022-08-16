@@ -809,7 +809,9 @@ class SbiAccountForm extends Component {
               <Text style={styles.tableCellCus}>In English Block Letter</Text>
             </View>
             <View style={[styles.tableColCus, { width: "70%" }]}>
-              <Text style={styles.tableCellCus}>{this.state.customerName}</Text>
+              <Text style={styles.tableCellCus}>
+                {this.state?.customerName}
+              </Text>
             </View>
           </View>
           <View style={styles.tableRow}>
