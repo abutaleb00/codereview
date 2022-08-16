@@ -337,8 +337,8 @@ export default class AccountView extends Component {
                           >
                             <img
                               src={
-                                singlenominee?.nominee !== undefined &&
-                                singlenominee.nominee?.photo64 !== undefined
+                                singlenominee.nominee !== undefined &&
+                                singlenominee.nominee.photo64 !== undefined
                                   ? `data:image/png;base64,${singlenominee.nominee.photo64}`
                                   : process.env.PUBLIC_URL + "/no-image.jpg"
                               }
