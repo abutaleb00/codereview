@@ -1124,7 +1124,7 @@ class AccountForm2 extends Component {
                   <Image
                     style={styles.image1}
                     src={
-                      this.state?.customerPhoto?.startsWith("/", 0)
+                      this.state.customerPhoto?.startsWith("/", 0)
                         ? `data:image/jpeg;base64,${this.state.customerPhoto}`
                         : `data:image/png;base64,${this.state.customerPhoto}`
                     }
@@ -1428,9 +1428,9 @@ class AccountForm2 extends Component {
             <View style={[styles.tableColCus, { width: "26.25%" }]}>
               <Text style={styles.tableCellCus}>
                 {" "}
-                {this.state?.cp?.identityDocType !== undefined &&
-                this.state?.cp?.identityDocType !== null &&
-                this.state?.cp?.identityDocType === 3
+                {this.state.cp?.identityDocType !== undefined &&
+                this.state.cp?.identityDocType !== null &&
+                this.state.cp?.identityDocType === 3
                   ? this.state.cp?.nidDetail?.nationalId10 !== null
                     ? this.state.cp?.nidDetail?.nationalId10
                     : this.state.cp?.nidDetail?.nationalId17
@@ -1446,9 +1446,9 @@ class AccountForm2 extends Component {
             <View style={[styles.tableColCus, { width: "24.25%" }]}>
               <Text style={styles.tableCellCus}>
                 {" "}
-                {this.state?.identityDocType !== undefined &&
-                this.state?.identityDocType !== null &&
-                this.state?.identityDocType === 6
+                {this.state.identityDocType !== undefined &&
+                this.state.identityDocType !== null &&
+                this.state.identityDocType === 6
                   ? this.state.cp?.passportDetail?.passportNumber
                   : ""}
               </Text>
@@ -1463,7 +1463,7 @@ class AccountForm2 extends Component {
             </View>
             <View style={[styles.tableColCus, { width: "26.25%" }]}>
               <Text style={styles.tableCellCus}>
-                {this.state?.cp?.identityDocType === 5
+                {this.state.cp?.identityDocType === 5
                   ? this.state.cp?.passportDetail?.passportNumber
                   : ""}
               </Text>
@@ -1473,7 +1473,7 @@ class AccountForm2 extends Component {
             </View>
             <View style={[styles.tableColCus, { width: "24.25%" }]}>
               <Text style={styles.tableCellCus}>
-                {this.state?.cp?.identityDocType === 5
+                {this.state.cp?.identityDocType === 5
                   ? this.state.cp?.identityDocExpiryDate
                   : ""}
               </Text>
@@ -1502,8 +1502,8 @@ class AccountForm2 extends Component {
             <View style={[styles.tableColCus, { width: "24.25%" }]}>
               <Text style={styles.tableCellCus}>
                 {" "}
-                {this.state?.cp?.identityDocType === 8
-                  ? this.state?.cp?.identityDocExpiryDate
+                {this.state.cp?.identityDocType === 8
+                  ? this.state.cp?.identityDocExpiryDate
                   : ""}
               </Text>
             </View>
@@ -1518,7 +1518,7 @@ class AccountForm2 extends Component {
             <View style={[styles.tableColCus, { width: "26.25%" }]}>
               <Text style={styles.tableCellCus}>
                 {" "}
-                {this.state?.cp?.identityDocType === 10
+                {this.state.cp?.identityDocType === 10
                   ? this.state.cp?.passportDetail?.passportNumber
                   : ""}
               </Text>
@@ -1529,7 +1529,7 @@ class AccountForm2 extends Component {
             <View style={[styles.tableColCus, { width: "24.25%" }]}>
               <Text style={styles.tableCellCus}>
                 {" "}
-                {this.state?.cp?.identityDocType === 10
+                {this.state.cp?.identityDocType === 10
                   ? this.state.cp?.identityDocExpiryDate
                   : ""}
               </Text>
