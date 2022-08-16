@@ -42,12 +42,8 @@ class AccountForm2 extends Component {
   };
   convertDocumentLists = () => {
     if (this.state.documentDetailList !== null) {
-      this.state.documentDetailList.map((v) => {
-        if (
-          v !== null &&
-          v !== undefined &&
-          v.base64Content?.startsWith("/", 0)
-        ) {
+      this.state.documentDetailList?.map((v) => {
+        if (v !== undefined && v.base64Content?.startsWith("/", 0)) {
           this.setState({
             propicexten: "data:image/jpeg;base64",
           });

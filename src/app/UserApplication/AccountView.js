@@ -337,10 +337,8 @@ export default class AccountView extends Component {
                           >
                             <img
                               src={
-                                singlenominee.nominee !== undefined &&
-                                singlenominee.nominee !== null &&
-                                singlenominee.nominee.photo64 !== undefined &&
-                                singlenominee.nominee.photo64 !== null
+                                singlenominee?.nominee !== undefined &&
+                                singlenominee.nominee?.photo64 !== undefined
                                   ? `data:image/png;base64,${singlenominee.nominee?.photo64}`
                                   : process.env.PUBLIC_URL + "/no-image.jpg"
                               }
@@ -431,9 +429,7 @@ export default class AccountView extends Component {
                                 name="a1"
                                 onChange={this.handleTotal}
                                 value={
-                                  this.state.product.name === "Savings"
-                                    ? (this.state.a1 = 1)
-                                    : (this.state.a1 = 2)
+                                  this.state.product.name === "Savings" ? 1 : 2
                                 }
                                 disabled
                               />

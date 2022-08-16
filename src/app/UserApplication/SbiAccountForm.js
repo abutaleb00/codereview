@@ -3209,9 +3209,7 @@ class SbiAccountForm extends Component {
               </View>
               <View style={[styles.tableColCus, { width: "20%" }]}>
                 <Text style={[styles.tableCellCus, { textAlign: "center" }]}>
-                  {this.state.product.name === "Savings"
-                    ? (this.state.a1 = 1)
-                    : (this.state.a1 = 2)}
+                  {this.state.product.name === "Savings" ? 1 : 2}
                 </Text>
               </View>
             </View>
