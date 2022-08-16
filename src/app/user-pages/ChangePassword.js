@@ -43,7 +43,7 @@ class ChangePassword extends Component {
                           localStorage.setItem("loggedIn", false);
                           localStorage.clear();
                           window.location.href = "/banklogin";
-                        } else {
+                        } else if (res.data.result.error === true) {
                           localStorage.setItem("loggedIn", false);
                           localStorage.clear();
                           window.location.href = "/banklogin";

@@ -394,11 +394,6 @@ class SbiAccountForm extends Component {
         display: "flex",
         borderBottom: "1px dotted #000000",
       },
-      text4: {
-        fontSize: 10,
-        width: "27%",
-        display: "flex",
-      },
       text5: {
         fontSize: 10,
         width: "21%",

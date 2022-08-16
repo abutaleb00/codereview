@@ -46,7 +46,7 @@ class AccountForm2 extends Component {
         if (
           v !== null &&
           v !== undefined &&
-          v?.base64Content?.startsWith("/", 0)
+          v.base64Content?.startsWith("/", 0)
         ) {
           this.setState({
             propicexten: "data:image/jpeg;base64",

@@ -657,7 +657,7 @@ export class CustomerView extends Component {
                         >
                           <img
                             src={
-                              this.state?.cp?.documentType === 3
+                              this.state.cp?.documentType === 3
                                 ? this.state.customerNIDFRONT !== null &&
                                   this.state.customerNIDFRONT !== undefined
                                   ? "data:image/png;base64," +

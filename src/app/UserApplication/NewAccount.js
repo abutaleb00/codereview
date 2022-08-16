@@ -462,7 +462,7 @@ export class NewAccount extends Component {
                           </tr>
                         </thead>
                         <tbody>
-                          {this.state?.owner?.map((owner, k) => (
+                          {this.state.owner?.map((owner, k) => (
                             <tr key={k}>
                               <td>{owner.cp.name}</td>
                               <td>{owner.cp.dob}</td>

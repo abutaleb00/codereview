@@ -40,7 +40,7 @@ export default class AccountView extends Component {
   };
 
   professionScore = () => {
-    let str = this.state?.tp?.profession;
+    let str = this.state.tp?.profession;
 
     let serviceName = str?.substring(str.indexOf(":") + 1);
     let serviceType = str?.substring(0, str.indexOf(":") - 1);
@@ -341,7 +341,7 @@ export default class AccountView extends Component {
                                 singlenominee.nominee !== null &&
                                 singlenominee.nominee.photo64 !== undefined &&
                                 singlenominee.nominee.photo64 !== null
-                                  ? `data:image/png;base64,${singlenominee?.nominee?.photo64}`
+                                  ? `data:image/png;base64,${singlenominee.nominee?.photo64}`
                                   : process.env.PUBLIC_URL + "/no-image.jpg"
                               }
                               className="rounded mx-auto d-block"
