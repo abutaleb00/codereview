@@ -10,7 +10,6 @@ import {
   tpInfo,
   newAccount,
   initialDeposit,
-  ownerInfo,
 } from "../components/finaldata";
 
 export class FinalSubmit extends Component {

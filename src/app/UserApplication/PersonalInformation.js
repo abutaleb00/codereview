@@ -763,10 +763,10 @@ export class PersonalInformation extends Component {
     let datatoSend = {
       bangla: text,
     };
-    let dataToCall = await instance.post(
-      baseURL + "/getenglishdata",
-      datatoSend
-    );
+    // let dataToCall = await instance.post(
+    //   baseURL + "/getenglishdata",
+    //   datatoSend
+    // );
     //console.log(dataToCall);
     // return dataToCall.data.data.english;
   };

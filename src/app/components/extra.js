@@ -1,5 +1,5 @@
 import { createDivisionOptions, mappedDistrict } from "../data/division";
-import { mappedUpazila } from "../data/upazila";
+// import { mappedUpazila } from "../data/upazila";
 import { findUpozella } from "../data/upozillamapped";
 import { createService, createBusiness } from "../data/profession";
 

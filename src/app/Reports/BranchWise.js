@@ -5,7 +5,6 @@ import React, { Component } from "react";
 import CusFileUpload from "../components/CusFileUpload";
 import { instance, baseURL } from "../service/ApiUrls";
 var FormData = require("form-data");
-var fs = require("fs");
 
 class BranchWise extends Component {
   constructor() {
