@@ -265,7 +265,7 @@ class SbiAccountForm extends Component {
             if (
               v !== null &&
               v !== undefined &&
-              v?.base64Content?.startsWith("/", 0)
+              v.base64Content?.startsWith("/", 0)
             ) {
               this.setState({
                 propicexten: "data:image/jpeg;base64",
@@ -278,7 +278,7 @@ class SbiAccountForm extends Component {
               console.log("image type 2", this.state.propicexten);
             }
 
-            if (Number(v.documentType) === DOCUMENTCHECKLIST.PHOTO.value) {
+            if (Number(v?.documentType) === DOCUMENTCHECKLIST.PHOTO.value) {
               this.setState({ customerPhoto: v.base64Content });
             } else if (
               Number(v.documentType) === DOCUMENTCHECKLIST.SIGNATURE.value
@@ -795,7 +795,7 @@ class SbiAccountForm extends Component {
             </View>
             <View style={[styles.tableColCus, { width: "70%" }]}>
               <Text style={styles.tableCellCus}>
-                {this.state.nameBn} {"  "}
+                {this.state?.nameBn} {"  "}
               </Text>
             </View>
           </View>

@@ -95,7 +95,6 @@ export let nominee = [
     title: "Identification Type",
     isMandatory: false,
     val: "",
-    isMandatory: true,
     disable: false,
   },
   {

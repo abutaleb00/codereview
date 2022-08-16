@@ -87,7 +87,7 @@ class CustomDropDownBox extends React.Component {
             {this.props.options.map((v, k) => {
               //console.log(v);
               return (
-                <option id={v.id} value={v.value}>
+                <option id={v.id} key={k} value={v.value}>
                   {v.title}
                 </option>
               );
