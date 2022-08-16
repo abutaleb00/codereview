@@ -1489,9 +1489,7 @@ class AccountForm2 extends Component {
             <View style={[styles.tableColCus, { width: "26.25%" }]}>
               <Text style={styles.tableCellCus}>
                 {" "}
-                {this.state.cp.identityDocType !== undefined &&
-                this.state.cp.identityDocType !== null &&
-                this.state.cp.identityDocType === 8
+                {this.state.cp?.identityDocType === 8
                   ? this.state.cp?.passportDetail?.passportNumber
                   : ""}
               </Text>
