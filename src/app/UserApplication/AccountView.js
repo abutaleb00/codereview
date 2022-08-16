@@ -25,7 +25,7 @@ export default class AccountView extends Component {
       total: 0,
       a1: 0,
       a2: 3,
-      b: 0,
+      b: 1,
       c1: 0,
       c2: 0,
       d: 0,
@@ -469,14 +469,16 @@ export default class AccountView extends Component {
                               <input
                                 type="number"
                                 name="b"
-                                onChange={this.handleTotal}
+                                onChange={(e) =>
+                                  this.setState({ b: e.target.value })
+                                }
                                 value={
                                   this.state.listCustomers[0].permanentAddress
                                     .country ===
                                   this.state.listCustomers[0].presentAddress
                                     .country
-                                    ? (this.state.b = 1)
-                                    : (this.state.b = 2)
+                                    ? 1
+                                    : 2
                                 }
                                 disabled
                               />
