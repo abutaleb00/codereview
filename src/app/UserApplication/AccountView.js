@@ -322,8 +322,9 @@ export default class AccountView extends Component {
                   <TabPanel>
                     {this.state.nomineeInfo?.map((singlenominee, i) => {
                       //console.log(singlenominee["nominee"]);
-                      singlenominee["nominee"]["sharePercent"] =
-                        singlenominee["sharePercent"];
+                      if (singlenominee !== undefined && singlenominee !== null)
+                        singlenominee["nominee"]["sharePercent"] =
+                          singlenominee["sharePercent"];
                       return (
                         <div
                           className="row justify-content-md-start mb-2 mt-2 p-3"
