@@ -54,7 +54,7 @@ class AccountForm2 extends Component {
           });
           console.log("image type 2", this.state.propicexten);
         }
-        if (Number(v.documentType) === DOCUMENTCHECKLIST.PHOTO.value) {
+        if (Number(v?.documentType) === DOCUMENTCHECKLIST.PHOTO.value) {
           this.setState({ customerPhoto: v.base64Content });
         } else if (
           Number(v.documentType) === DOCUMENTCHECKLIST.SIGNATURE.value
@@ -1120,7 +1120,8 @@ class AccountForm2 extends Component {
                   <Image
                     style={styles.image1}
                     src={
-                      this.state.customerPhoto?.startsWith("/", 0)
+                      this.state.customerPhoto !== undefined &&
+                      this.state.customerPhoto.startsWith("/", 0)
                         ? `data:image/jpeg;base64,${this.state.customerPhoto}`
                         : `data:image/png;base64,${this.state.customerPhoto}`
                     }

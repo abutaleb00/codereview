@@ -339,7 +339,7 @@ export default class AccountView extends Component {
                               src={
                                 singlenominee?.nominee !== undefined &&
                                 singlenominee.nominee?.photo64 !== undefined
-                                  ? `data:image/png;base64,${singlenominee.nominee?.photo64}`
+                                  ? `data:image/png;base64,${singlenominee.nominee.photo64}`
                                   : process.env.PUBLIC_URL + "/no-image.jpg"
                               }
                               className="rounded mx-auto d-block"
