@@ -111,7 +111,7 @@ class SbiAccountForm extends Component {
       identityDocType,
       documentReference,
       passportNumber;
-    this.state.listCustomers.map((e, i) => {
+    this.state.listCustomers?.map((e, i) => {
       if (i === 0) {
         customerName = e.cp.name;
       } else {
@@ -3353,7 +3353,7 @@ class SbiAccountForm extends Component {
               </View>
               <View style={[styles.tableColCus, { width: "40%" }]}>
                 <Text style={[styles.tableCellCus, { textAlign: "center" }]}>
-                  {this.state.tp.profession}
+                  {this.state.tp?.profession}
                 </Text>
               </View>
               <View

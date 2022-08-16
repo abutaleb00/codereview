@@ -649,7 +649,6 @@ export class PersonalInformation extends Component {
         additionalMouzaOrMoholla_en: this.state.pm_additionalMouzaOrMoholla_en,
         additionalVillageOrRoad_en: this.state.pm_additionalVillageOrRoad_en,
         homeOrHoldingNo_en: this.state.pm_homeOrHoldingNo_en,
-        homeOrHoldingNo_en: this.state.pm_homeOrHoldingNo_en,
       },
       presentAddress: {
         ...this.state.presentAddress,
@@ -663,7 +662,6 @@ export class PersonalInformation extends Component {
         postOffice_en: this.state.pr_postOffice_en,
         additionalMouzaOrMoholla_en: this.state.pr_additionalMouzaOrMoholla_en,
         additionalVillageOrRoad_en: this.state.pr_additionalVillageOrRoad_en,
-        homeOrHoldingNo_en: this.state.pr_homeOrHoldingNo_en,
         homeOrHoldingNo_en: this.state.pr_homeOrHoldingNo_en,
       },
       professionalAddress: {

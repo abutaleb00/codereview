@@ -320,66 +320,64 @@ export default class AccountView extends Component {
                     </div>
                   </TabPanel>
                   <TabPanel>
-                    {this.state.nomineeInfo !== null &&
-                      this.state.nomineeInfo.map((singlenominee, i) => {
-                        //console.log(singlenominee["nominee"]);
-                        singlenominee["nominee"]["sharePercent"] =
-                          singlenominee["sharePercent"];
-                        return (
+                    {this.state.nomineeInfo?.map((singlenominee, i) => {
+                      //console.log(singlenominee["nominee"]);
+                      singlenominee["nominee"]["sharePercent"] =
+                        singlenominee["sharePercent"];
+                      return (
+                        <div
+                          className="row justify-content-md-start mb-2 mt-2 p-3"
+                          style={{ borderBottom: "1px solid gray" }}
+                          id="submit1"
+                          key={i}
+                        >
                           <div
-                            className="row justify-content-md-start mb-2 mt-2 p-3"
-                            style={{ borderBottom: "1px solid gray" }}
-                            id="submit1"
-                            key={i}
+                            className="col-md-3"
+                            style={{ textAlign: "center" }}
                           >
-                            <div
-                              className="col-md-3"
-                              style={{ textAlign: "center" }}
-                            >
-                              <img
-                                src={
-                                  singlenominee.nominee !== undefined &&
-                                  singlenominee.nominee !== null &&
-                                  singlenominee.nominee.photo64 !== undefined &&
-                                  singlenominee.nominee.photo64 !== null
-                                    ? `data:image/png;base64,${singlenominee?.nominee?.photo64}`
-                                    : process.env.PUBLIC_URL + "/no-image.jpg"
-                                }
-                                className="rounded mx-auto d-block"
-                                alt="user image"
-                                width="50%"
-                                style={{ maxHeight: "220px" }}
-                              />
-                            </div>
-                            <div className="col-md-9">
-                              {nominee.map((v, k) => {
-                                //console.log(v, k);
-                                {
-                                  return (
-                                    <TextBox
-                                      key={`text-${k}`}
-                                      dim={v.dim}
-                                      id={v.id}
-                                      type={v.type}
-                                      maxLength={v.maxLength}
-                                      title={v.title}
-                                      isMandatory={v.isMandatory}
-                                      disable={v.disable}
-                                      val={
-                                        singlenominee["nominee"] !==
-                                          undefined &&
-                                        singlenominee["nominee"] !== null
-                                          ? singlenominee["nominee"][v.id]
-                                          : "N/A"
-                                      }
-                                    />
-                                  );
-                                }
-                              })}
-                            </div>
+                            <img
+                              src={
+                                singlenominee.nominee !== undefined &&
+                                singlenominee.nominee !== null &&
+                                singlenominee.nominee.photo64 !== undefined &&
+                                singlenominee.nominee.photo64 !== null
+                                  ? `data:image/png;base64,${singlenominee?.nominee?.photo64}`
+                                  : process.env.PUBLIC_URL + "/no-image.jpg"
+                              }
+                              className="rounded mx-auto d-block"
+                              alt="user image"
+                              width="50%"
+                              style={{ maxHeight: "220px" }}
+                            />
                           </div>
-                        );
-                      })}
+                          <div className="col-md-9">
+                            {nominee.map((v, k) => {
+                              //console.log(v, k);
+                              {
+                                return (
+                                  <TextBox
+                                    key={`text-${k}`}
+                                    dim={v.dim}
+                                    id={v.id}
+                                    type={v.type}
+                                    maxLength={v.maxLength}
+                                    title={v.title}
+                                    isMandatory={v.isMandatory}
+                                    disable={v.disable}
+                                    val={
+                                      singlenominee["nominee"] !== undefined &&
+                                      singlenominee["nominee"] !== null
+                                        ? singlenominee["nominee"][v.id]
+                                        : "N/A"
+                                    }
+                                  />
+                                );
+                              }
+                            })}
+                          </div>
+                        </div>
+                      );
+                    })}
                   </TabPanel>
                   <TabPanel>
                     <div className="col-md-12">
