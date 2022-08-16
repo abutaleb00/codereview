@@ -70,7 +70,7 @@ class SbiAccountForm extends Component {
   nomineeInfo = () => {
     let name;
     let relation, ndob, sharePercent, nidentityNumber, nidentityType;
-    this.state.nomineeInfo?.map((e, i) => {
+    this.state?.nomineeInfo?.map((e, i) => {
       name = e.nominee.name;
       relation = e.nominee.relation;
       ndob = e.nominee.dob;
@@ -111,7 +111,7 @@ class SbiAccountForm extends Component {
       identityDocType,
       documentReference,
       passportNumber;
-    this.state.listCustomers.map((e, i) => {
+    this.state?.listCustomers.map((e, i) => {
       if (i === 0) {
         customerName = e.cp.name;
       } else {
@@ -207,7 +207,7 @@ class SbiAccountForm extends Component {
           Number(v.documentType) === DOCUMENTCHECKLIST.NIDFRONT.value
         ) {
           this.setState({ customerNIDFRONT: v.base64Content }, () => {
-            // console.log(this.state.customerNIDFRONT);
+            // console.log(this.state?.customerNIDFRONT);
           });
         } else if (Number(v.documentType) === DOCUMENTCHECKLIST.NIDBACK.value) {
           this.setState({ customerNIDBACK: v.base64Content });
@@ -245,7 +245,7 @@ class SbiAccountForm extends Component {
         identityDocType: identityDocType,
       },
       () => {
-        this.callDocumentList(this.state.documentReference);
+        this.callDocumentList(this.state?.documentReference);
       }
     );
   };
@@ -270,12 +270,12 @@ class SbiAccountForm extends Component {
               this.setState({
                 propicexten: "data:image/jpeg;base64",
               });
-              // console.log("image type", this.state.propicexten);
+              // console.log("image type", this.state?.propicexten);
             } else {
               this.setState({
                 propicexten: "data:image/png;base64",
               });
-              console.log("image type 2", this.state.propicexten);
+              console.log("image type 2", this.state?.propicexten);
             }
 
             if (Number(v?.documentType) === DOCUMENTCHECKLIST.PHOTO.value) {
@@ -289,7 +289,7 @@ class SbiAccountForm extends Component {
               Number(v.documentType) === DOCUMENTCHECKLIST.NIDFRONT.value
             ) {
               this.setState({ customerNIDFRONT: v.base64Content }, () => {
-                // console.log(this.state.customerNIDFRONT);
+                // console.log(this.state?.customerNIDFRONT);
               });
             } else if (
               Number(v.documentType) === DOCUMENTCHECKLIST.NIDBACK.value
@@ -823,7 +823,7 @@ class SbiAccountForm extends Component {
             </View>
             <View style={[styles.tableColCus, { width: "25%" }]}>
               <Text style={styles.tableCellCus}>
-                {this.state.product.name}{" "}
+                {this.state?.product.name}{" "}
               </Text>
             </View>
             <View style={[styles.tableColCus, { width: "4%" }]}>
@@ -970,17 +970,17 @@ class SbiAccountForm extends Component {
           <View style={styles.tableRow}>
             <View style={[styles.tableColCus, { width: "20%" }]}>
               <Text style={styles.tableCellCus}>
-                {this.state.account?.checkBook === false ? "No" : "Yes"}
+                {this.state?.account?.checkBook === false ? "No" : "Yes"}
               </Text>
             </View>
             <View style={[styles.tableColCus, { width: "20%" }]}>
               <Text style={styles.tableCellCus}>
-                {this.state.account?.debitCard === false ? "No" : "Yes"}
+                {this.state?.account?.debitCard === false ? "No" : "Yes"}
               </Text>
             </View>
             <View style={[styles.tableColCus, { width: "20%" }]}>
               <Text style={styles.tableCellCus}>
-                {this.state.account?.smsAlert === false ? "No" : "Yes"}{" "}
+                {this.state?.account?.smsAlert === false ? "No" : "Yes"}{" "}
               </Text>
             </View>
             <View style={[styles.tableColCus, { width: "20%" }]}>
@@ -1015,7 +1015,7 @@ class SbiAccountForm extends Component {
               <Text style={styles.tableCellCus}>Mobile Number </Text>
             </View>
             <View style={[styles.tableColCus, { width: "55%" }]}>
-              <Text style={styles.tableCellCus}>{this.state.mobile}</Text>
+              <Text style={styles.tableCellCus}>{this.state?.mobile}</Text>
             </View>
           </View>
           <View style={styles.tableRow}>
@@ -1036,7 +1036,7 @@ class SbiAccountForm extends Component {
               <Text style={styles.tableCellCus}>Email Address </Text>
             </View>
             <View style={[styles.tableColCus, { width: "55%" }]}>
-              <Text style={styles.tableCellCus}>{this.state.email}</Text>
+              <Text style={styles.tableCellCus}>{this.state?.email}</Text>
             </View>
           </View>
         </View>
@@ -1143,7 +1143,7 @@ class SbiAccountForm extends Component {
                 </View>
                 <View style={[styles.tableColCus, { width: "65%" }]}>
                   <Text style={styles.tableCellCus}>
-                    {this.state.nameBn} {"  "}
+                    {this.state?.nameBn} {"  "}
                   </Text>
                 </View>
               </View>
@@ -1163,7 +1163,7 @@ class SbiAccountForm extends Component {
                 </View>
                 <View style={[styles.tableColCus, { width: "65%" }]}>
                   <Text style={styles.tableCellCus}>
-                    {this.state.customerName}
+                    {this.state?.customerName}
                   </Text>
                 </View>
               </View>
@@ -1180,7 +1180,7 @@ class SbiAccountForm extends Component {
                   <Text style={styles.tableCellCus}>a. Date of Birth</Text>
                 </View>
                 <View style={[styles.tableColCus, { width: "65%" }]}>
-                  <Text style={styles.tableCellCus}>{this.state.dob}</Text>
+                  <Text style={styles.tableCellCus}>{this.state?.dob}</Text>
                 </View>
               </View>
               <View style={styles.tableRow}>
@@ -1197,7 +1197,7 @@ class SbiAccountForm extends Component {
                 </View>
                 <View style={[styles.tableColCus, { width: "65%" }]}>
                   <Text style={styles.tableCellCus}>
-                    {this.state.birth_place}
+                    {this.state?.birth_place}
                   </Text>
                 </View>
               </View>
@@ -1215,7 +1215,7 @@ class SbiAccountForm extends Component {
                 </View>
                 <View style={[styles.tableColCus, { width: "65%" }]}>
                   <Text style={styles.tableCellCus}>
-                    {this.state.nationality === "bangladeshi"
+                    {this.state?.nationality === "bangladeshi"
                       ? "Bangladesh"
                       : "India"}
                   </Text>
@@ -1240,11 +1240,11 @@ class SbiAccountForm extends Component {
                 },
               ]}
             >
-              {this.state.customerPhoto !== undefined &&
-              this.state.customerPhoto !== null ? (
+              {this.state?.customerPhoto !== undefined &&
+              this.state?.customerPhoto !== null ? (
                 <Image
                   style={styles.image1}
-                  src={`${this.state.propicexten},${this.state.customerPhoto}`}
+                  src={`${this.state?.propicexten},${this.state?.customerPhoto}`}
                 />
               ) : (
                 <Text
@@ -1270,7 +1270,7 @@ class SbiAccountForm extends Component {
               <Text style={styles.tableCellCus}>Father’s Name</Text>
             </View>
             <View style={[styles.tableColCus, { width: "70%" }]}>
-              <Text style={styles.tableCellCus}>{this.state.fatherName}</Text>
+              <Text style={styles.tableCellCus}>{this.state?.fatherName}</Text>
             </View>
           </View>
           <View style={styles.tableRow}>
@@ -1281,7 +1281,7 @@ class SbiAccountForm extends Component {
               <Text style={styles.tableCellCus}>Mother’s Name</Text>
             </View>
             <View style={[styles.tableColCus, { width: "70%" }]}>
-              <Text style={styles.tableCellCus}>{this.state.motherName}</Text>
+              <Text style={styles.tableCellCus}>{this.state?.motherName}</Text>
             </View>
           </View>
           <View style={styles.tableRow}>
@@ -1292,7 +1292,7 @@ class SbiAccountForm extends Component {
               <Text style={styles.tableCellCus}>Spouse’s Name</Text>
             </View>
             <View style={[styles.tableColCus, { width: "70%" }]}>
-              <Text style={styles.tableCellCus}>{this.state.spouseName}</Text>
+              <Text style={styles.tableCellCus}>{this.state?.spouseName}</Text>
             </View>
           </View>
           <View style={styles.tableRow}>
@@ -1304,7 +1304,7 @@ class SbiAccountForm extends Component {
             </View>
             <View style={[styles.tableColCus, { width: "30%" }]}>
               <Text style={styles.tableCellCus}>
-                {this.state.nationality === "bangladeshi"
+                {this.state?.nationality === "bangladeshi"
                   ? "Bangladeshi"
                   : "India"}
               </Text>
@@ -1324,7 +1324,7 @@ class SbiAccountForm extends Component {
               <Text style={styles.tableCellCus}>Gender</Text>
             </View>
             <View style={[styles.tableColCus, { width: "25%" }]}>
-              <Text style={styles.tableCellCus}>{this.state.gender}</Text>
+              <Text style={styles.tableCellCus}>{this.state?.gender}</Text>
             </View>
             <View style={[styles.tableColCus, { width: "5%" }]}>
               <Text style={styles.tableCellCus}>8</Text>
@@ -1355,7 +1355,7 @@ class SbiAccountForm extends Component {
             </View>
             <View style={[styles.tableColCus, { width: "70%" }]}>
               <Text style={styles.tableCellCus}>
-                {this.state.tp?.profession}
+                {this.state?.tp?.profession}
               </Text>
             </View>
           </View>
@@ -1368,7 +1368,7 @@ class SbiAccountForm extends Component {
             </View>
             <View style={[styles.tableColCus, { width: "25%" }]}>
               <Text style={styles.tableCellCus}>
-                {this.state.tp?.monthlyIncome}
+                {this.state?.tp?.monthlyIncome}
               </Text>
             </View>
             <View style={[styles.tableColCus, { width: "5%" }]}>
@@ -1395,7 +1395,7 @@ class SbiAccountForm extends Component {
             <View style={[styles.tableColCus, { width: "70%" }]}>
               <Text style={styles.tableCellCus}>
                 {" "}
-                {this.state.tp?.sourceOfFund}
+                {this.state?.tp?.sourceOfFund}
               </Text>
             </View>
           </View>
@@ -1433,8 +1433,8 @@ class SbiAccountForm extends Component {
               ]}
             >
               <Text style={styles.tableCellCus}>
-                {this.state.permanentAddress !== null
-                  ? this.state.permanentAddress
+                {this.state?.permanentAddress !== null
+                  ? this.state?.permanentAddress
                   : ""}
               </Text>
             </View>
@@ -1445,7 +1445,7 @@ class SbiAccountForm extends Component {
               ]}
             >
               <Text style={styles.tableCellCus}>
-                {!this.state.professionalAddressInstitutionAddress}
+                {!this.state?.professionalAddressInstitutionAddress}
               </Text>
             </View>
           </View>
@@ -1948,7 +1948,7 @@ class SbiAccountForm extends Component {
                 },
               ]}
             >
-              {this.state.userImg === null ? (
+              {this.state?.userImg === null ? (
                 <Image style={styles.image1} src="/user-image.jpg" />
               ) : (
                 <Text
@@ -2442,7 +2442,7 @@ class SbiAccountForm extends Component {
                 },
               ]}
             >
-              {this.state.userImg === null ? (
+              {this.state?.userImg === null ? (
                 <Image style={styles.image1} src="/user-image.jpg" />
               ) : (
                 <Text
@@ -2929,38 +2929,38 @@ class SbiAccountForm extends Component {
               <Text style={[styles.tableCellCus, {}]}>Signature</Text>
             </View>
             <View style={[styles.tableColCus, { width: "30%" }]}>
-              {this.state.customerSignature === undefined ||
-              this.state.customerSignature === null ? (
+              {this.state?.customerSignature === undefined ||
+              this.state?.customerSignature === null ? (
                 ""
               ) : (
                 <View>
                   <Image
                     style={styles.imageS}
                     src={
-                      this.state.customerSignature.startsWith("data")
-                        ? this.state.customerSignature
-                        : this.state.customerSignature.startsWith("/", 0)
-                        ? `data:image/jpeg;base64,${this.state.customerSignature}`
-                        : this.state.customerSignature.startsWith("Q", 0)
+                      this.state?.customerSignature.startsWith("data")
+                        ? this.state?.customerSignature
+                        : this.state?.customerSignature.startsWith("/", 0)
+                        ? `data:image/jpeg;base64,${this.state?.customerSignature}`
+                        : this.state?.customerSignature.startsWith("Q", 0)
                         ? "white.png"
-                        : `data:image/png;base64,${this.state.customerSignature}`
+                        : `data:image/png;base64,${this.state?.customerSignature}`
                     }
-                    // src={`${this.state.propicexten},${this.state.customerSignature}`}
+                    // src={`${this.state?.propicexten},${this.state?.customerSignature}`}
                   />
                   {/* <Image
                     style={styles.image1}
-                    // src={`${this.state.propicexten},${this.state.customerSignature}`}
+                    // src={`${this.state?.propicexten},${this.state?.customerSignature}`}
                     src={
-                      "data:image/png;base64," + this.state.customerSignature
+                      "data:image/png;base64," + this.state?.customerSignature
                     }
                     src={
-                      "data:image/jpeg;base64," + this.state.customerSignature
+                      "data:image/jpeg;base64," + this.state?.customerSignature
                     }
                   /> */}
                 </View>
                 // <Image
                 //   style={styles.image2}
-                //   src={`${this.state.propicexten},${this.state.customerSignature}`}
+                //   src={`${this.state?.propicexten},${this.state?.customerSignature}`}
                 // />
               )}
             </View>
@@ -3211,12 +3211,12 @@ class SbiAccountForm extends Component {
               </View>
               <View style={[styles.tableColCus, { width: "40%" }]}>
                 <Text style={[styles.tableCellCus, { textAlign: "center" }]}>
-                  {this.state.product.name}
+                  {this.state?.product.name}
                 </Text>
               </View>
               <View style={[styles.tableColCus, { width: "20%" }]}>
                 <Text style={[styles.tableCellCus, { textAlign: "center" }]}>
-                  {this.state.product.name === "Savings"
+                  {this.state?.product.name === "Savings"
                     ? (this.state.a1 = 1)
                     : (this.state.a1 = 2)}
                 </Text>
@@ -3247,16 +3247,16 @@ class SbiAccountForm extends Component {
               </View>
               <View style={[styles.tableColCus, { width: "40%" }]}>
                 <Text style={[styles.tableCellCus, { textAlign: "center" }]}>
-                  {this.state.listCustomers[0].permanentAddress.country ===
-                  this.state.listCustomers[0].presentAddress.country
+                  {this.state?.listCustomers[0].permanentAddress.country ===
+                  this.state?.listCustomers[0].presentAddress.country
                     ? "Resident Bangladeshi Customer"
                     : "Non Resident Bangladeshi Customer"}
                 </Text>
               </View>
               <View style={[styles.tableColCus, { width: "20%" }]}>
                 <Text style={[styles.tableCellCus, { textAlign: "center" }]}>
-                  {this.state.listCustomers[0].permanentAddress.country ===
-                  this.state.listCustomers[0].presentAddress.country
+                  {this.state?.listCustomers[0].permanentAddress.country ===
+                  this.state?.listCustomers[0].presentAddress.country
                     ? (this.state.b = 1)
                     : (this.state.b = 2)}
                 </Text>
@@ -3355,7 +3355,7 @@ class SbiAccountForm extends Component {
               </View>
               <View style={[styles.tableColCus, { width: "40%" }]}>
                 <Text style={[styles.tableCellCus, { textAlign: "center" }]}>
-                  {this.state.tp.profession}
+                  {this.state?.tp.profession}
                 </Text>
               </View>
               <View
@@ -3365,7 +3365,7 @@ class SbiAccountForm extends Component {
                 ]}
               >
                 <Text style={[styles.tableCellCus, { textAlign: "center" }]}>
-                  {this.state.f}
+                  {this.state?.f}
                 </Text>
               </View>
             </View>
