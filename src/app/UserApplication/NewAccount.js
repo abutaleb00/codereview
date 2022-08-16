@@ -464,16 +464,16 @@ export class NewAccount extends Component {
                         <tbody>
                           {this.state.owner?.map((owner, k) => (
                             <tr key={k}>
-                              <td>{owner?.cp?.name}</td>
-                              <td>{owner?.cp?.dob}</td>
+                              <td>{owner.cp?.name}</td>
+                              <td>{owner.cp?.dob}</td>
                               <td>
-                                {owner?.cp?.identityDocType === 3
+                                {owner.cp?.identityDocType === 3
                                   ? "NID"
-                                  : owner?.cp?.identityDocType === 5
+                                  : owner.cp?.identityDocType === 5
                                   ? "Passport"
-                                  : owner?.cp?.identityDocType === 8
+                                  : owner.cp?.identityDocType === 8
                                   ? "Driving License"
-                                  : owner?.cp?.identityDocType === 10
+                                  : owner.cp?.identityDocType === 10
                                   ? "PAN / Aadhar Card"
                                   : "Birth Certificate"}
                               </td>
@@ -488,7 +488,7 @@ export class NewAccount extends Component {
                                       ? owner.cp?.nidDetail.nationalId17
                                       : ""
                                     : ""
-                                  : owner.cp?.passportDetail?.passportNumber}
+                                  : owner.cp.passportDetail?.passportNumber}
                               </td>
                               {/* <td>
                                 <i
