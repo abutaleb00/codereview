@@ -913,7 +913,7 @@ class AccountForm extends Component {
                   },
                 ]}
               >
-                {this.state.datToload.branch != undefined &&
+                {this.state.datToload?.branch != undefined &&
                   this.state.datToload.branch.name}
               </Text>
               <Text style={[styles.text, { width: "auto" }]}>শাখা</Text>

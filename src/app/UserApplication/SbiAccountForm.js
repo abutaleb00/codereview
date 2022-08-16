@@ -279,7 +279,7 @@ class SbiAccountForm extends Component {
             }
 
             if (Number(v?.documentType) === DOCUMENTCHECKLIST.PHOTO.value) {
-              this.setState({ customerPhoto: v.base64Content });
+              this.setState({ customerPhoto: v?.base64Content });
             } else if (
               Number(v.documentType) === DOCUMENTCHECKLIST.SIGNATURE.value
             ) {
